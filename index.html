@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI DSA Assistant</title>
+    <meta name="description" content="Generate DSA topic explanations, code implementations, and practice questions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Highlight.js for Java code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glass"></div>
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+
+    <main class="container">
+        <header class="header">
+            <h1>DSA Concept <span>Generator</span></h1>
+            <p>Master Data Structures and Algorithms with AI-tailored explanations, Java implementations, and practice questions.</p>
+        </header>
+
+        <section class="controls">
+            <div class="input-group">
+                <input type="text" id="topic-input" placeholder="e.g., Binary Search Tree, Graph, Dynamic Programming" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <select id="difficulty-select">
+                    <option value="" disabled selected>Select Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="generate-btn" class="glow-on-hover">
+                <span class="btn-text">Generate Lesson</span>
+                <div class="loader hidden"></div>
+            </button>
+        </section>
+
+        <section class="output hidden" id="output-section">
+            <div class="card explanation-card">
+                <h2>Explanation</h2>
+                <div id="explanation-content" class="content-block"></div>
+            </div>
+
+            <div class="card code-card">
+                <h2>Java Implementation <span class="badge" id="difficulty-badge">Medium</span></h2>
+                <pre><code class="language-java" id="code-content"></code></pre>
+            </div>
+
+            <div class="card practice-card">
+                <h2>Practice Questions</h2>
+                <ul id="practice-questions" class="questions-list">
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
