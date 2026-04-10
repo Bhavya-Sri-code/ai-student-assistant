@@ -7,7 +7,7 @@
     <meta name="description" content="Generate DSA topic explanations, code implementations, and practice questions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Highlight.js for Java code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -45,18 +45,32 @@
         </section>
 
         <section class="output hidden" id="output-section">
-            <div class="card explanation-card">
-                <h2>Explanation</h2>
+            <div class="section-container explanation-card">
+                <h2 class="section-title"><span class="icon">📖</span> 1. Explanation</h2>
                 <div id="explanation-content" class="content-block"></div>
             </div>
 
-            <div class="card code-card">
-                <h2>Java Implementation <span class="badge" id="difficulty-badge">Medium</span></h2>
-                <pre><code class="language-java" id="code-content"></code></pre>
+            <div class="section-container code-card">
+                <div class="code-header-wrap">
+                    <h2 class="section-title"><span class="icon">💻</span> 2. Java Code</h2>
+                    <span class="badge" id="difficulty-badge">Medium</span>
+                </div>
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="window-title">Solution.java</span>
+                        <div class="spacer"></div>
+                    </div>
+                    <pre><code class="language-java" id="code-content"></code></pre>
+                </div>
             </div>
 
-            <div class="card practice-card">
-                <h2>Practice Questions</h2>
+            <div class="section-container practice-card">
+                <h2 class="section-title"><span class="icon">🎯</span> 3. Practice Questions</h2>
                 <ul id="practice-questions" class="questions-list">
                 </ul>
             </div>

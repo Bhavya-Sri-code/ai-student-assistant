@@ -124,8 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
             codeContent.removeAttribute('data-highlighted'); // reset highlightjs flag
             hljs.highlightElement(codeContent);
             
+            // Update difficulty badge
+            difficultyBadge.textContent = difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
             difficultyBadge.className = `badge ${difficulty}`; // Reset and set color class
-            
             // Populate questions based on difficulty
             practiceQuestions.innerHTML = '';
             const questions = data.questions[difficulty];
