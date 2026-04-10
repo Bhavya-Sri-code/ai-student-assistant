@@ -42,6 +42,10 @@
                 <span class="btn-text">Generate Lesson</span>
                 <div class="loader hidden"></div>
             </button>
+            <button id="interview-btn" class="glow-on-hover interview-btn">
+                <span class="btn-text">Prepare for Interview</span>
+                <div class="loader hidden"></div>
+            </button>
         </section>
 
         <section class="output hidden" id="output-section">
@@ -73,6 +77,19 @@
                 <h2 class="section-title"><span class="icon">🎯</span> 3. Practice Questions</h2>
                 <ul id="practice-questions" class="questions-list">
                 </ul>
+            </div>
+        </section>
+
+        <section class="interview-output hidden" id="interview-section">
+            <div class="section-container interview-card">
+                <h2 class="section-title gold-text"><span class="icon">🏆</span> Interview Mode</h2>
+                
+                <h3 class="sub-heading">Top 3 Interview Questions</h3>
+                <ul id="interview-questions" class="questions-list gold-list">
+                </ul>
+                
+                <h3 class="sub-heading">Coding Challenge</h3>
+                <div id="interview-problem" class="content-block problem-text"></div>
             </div>
         </section>
     </main>
