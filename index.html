@@ -48,6 +48,12 @@
             </button>
         </section>
 
+        <!-- Full size loading indicator placed right below controls -->
+        <div id="global-loader" class="global-loader hidden">
+            <div class="spinner"></div>
+            <p>AI is thinking...</p>
+        </div>
+
         <section class="output hidden" id="output-section">
             <div class="section-container explanation-card">
                 <h2 class="section-title"><span class="icon">📖</span> 1. Explanation</h2>
@@ -67,7 +73,11 @@
                             <span class="dot green"></span>
                         </div>
                         <span class="window-title">Solution.java</span>
-                        <div class="spacer"></div>
+                        <div class="header-actions">
+                            <button id="copy-btn" class="copy-btn" title="Copy to clipboard">
+                                <span class="copy-icon">📋</span> <span class="copy-text">Copy</span>
+                            </button>
+                        </div>
                     </div>
                     <pre><code class="language-java" id="code-content"></code></pre>
                 </div>

@@ -120,9 +120,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const intBtnText = interviewBtn.querySelector('.btn-text');
     const intLoader = interviewBtn.querySelector('.loader');
     
+    // Global Elements
+    const globalLoader = document.getElementById('global-loader');
+    const copyBtn = document.getElementById('copy-btn');
+    const copyText = copyBtn.querySelector('.copy-text');
+    
     // UI elements for button state
     const btnText = generateBtn.querySelector('.btn-text');
     const loader = generateBtn.querySelector('.loader');
+
+    // Copy Button functionality
+    copyBtn.addEventListener('click', () => {
+        const code = codeContent.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            copyText.textContent = "Copied!";
+            copyBtn.classList.add('copied');
+            setTimeout(() => {
+                copyText.textContent = "Copy";
+                copyBtn.classList.remove('copied');
+            }, 2000);
+        });
+    });
 
     generateBtn.addEventListener('click', () => {
         const topic = topicInput.value.trim().toLowerCase();
@@ -139,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loader.classList.remove('hidden');
         outputSection.classList.add('hidden');
         interviewSection.classList.add('hidden');
+        globalLoader.classList.remove('hidden');
 
         // Simulate network request delay (1.5 seconds)
         setTimeout(() => {
@@ -146,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
             generateBtn.disabled = false;
             btnText.classList.remove('hidden');
             loader.classList.add('hidden');
+            globalLoader.classList.add('hidden');
 
             // Populate data
             const data = DUMMY_DATA[topic] || DEFAULT_DATA;
@@ -192,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
         intLoader.classList.remove('hidden');
         interviewSection.classList.add('hidden');
         outputSection.classList.add('hidden');
+        globalLoader.classList.remove('hidden');
 
         // Simulate network request delay
         setTimeout(() => {
@@ -199,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
             interviewBtn.disabled = false;
             intBtnText.classList.remove('hidden');
             intLoader.classList.add('hidden');
+            globalLoader.classList.add('hidden');
 
             // Populate data
             const data = DUMMY_DATA[topic] || DEFAULT_DATA;
